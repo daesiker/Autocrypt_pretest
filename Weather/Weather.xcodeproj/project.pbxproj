@@ -9,19 +9,37 @@
 /* Begin PBXBuildFile section */
 		61A6DFF02CD1082F00BCE137 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A6DFEF2CD1082F00BCE137 /* AppDelegate.swift */; };
 		61A6DFF22CD1082F00BCE137 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A6DFF12CD1082F00BCE137 /* SceneDelegate.swift */; };
-		61A6DFF42CD1082F00BCE137 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A6DFF32CD1082F00BCE137 /* ViewController.swift */; };
 		61A6DFF92CD1083000BCE137 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61A6DFF82CD1083000BCE137 /* Assets.xcassets */; };
 		61A6DFFC2CD1083000BCE137 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 61A6DFFB2CD1083000BCE137 /* Base */; };
+		61A6E0062CD11A6100BCE137 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A6E0052CD11A6100BCE137 /* SplashViewController.swift */; };
+		61A6E00A2CD11AAF00BCE137 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 61A6E0092CD11AAF00BCE137 /* SnapKit */; };
+		61A6E00D2CD11ACD00BCE137 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 61A6E00C2CD11ACD00BCE137 /* Then */; };
+		61A6E0122CD124FD00BCE137 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A6E0112CD124FD00BCE137 /* MainViewController.swift */; };
+		61A6E01A2CD13B3600BCE137 /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 61A6E0142CD13B3600BCE137 /* Pretendard-ExtraBold.otf */; };
+		61A6E01B2CD13B3600BCE137 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 61A6E0152CD13B3600BCE137 /* Pretendard-Regular.otf */; };
+		61A6E01C2CD13B3600BCE137 /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 61A6E0162CD13B3600BCE137 /* Pretendard-Light.otf */; };
+		61A6E01D2CD13B3600BCE137 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 61A6E0172CD13B3600BCE137 /* Pretendard-Bold.otf */; };
+		61A6E01E2CD13B3600BCE137 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 61A6E0182CD13B3600BCE137 /* Pretendard-Medium.otf */; };
+		61A6E01F2CD13B3600BCE137 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 61A6E0192CD13B3600BCE137 /* Pretendard-SemiBold.otf */; };
+		61A6E0222CD13C5100BCE137 /* reduced_citylist.json in Resources */ = {isa = PBXBuildFile; fileRef = 61A6E0212CD13C5100BCE137 /* reduced_citylist.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		61A6DFEC2CD1082F00BCE137 /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61A6DFEF2CD1082F00BCE137 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		61A6DFF12CD1082F00BCE137 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		61A6DFF32CD1082F00BCE137 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		61A6DFF82CD1083000BCE137 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		61A6DFFB2CD1083000BCE137 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		61A6DFFD2CD1083000BCE137 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		61A6E0052CD11A6100BCE137 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		61A6E0112CD124FD00BCE137 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		61A6E0142CD13B3600BCE137 /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.otf"; sourceTree = "<group>"; };
+		61A6E0152CD13B3600BCE137 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
+		61A6E0162CD13B3600BCE137 /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
+		61A6E0172CD13B3600BCE137 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
+		61A6E0182CD13B3600BCE137 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
+		61A6E0192CD13B3600BCE137 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
+		61A6E0212CD13C5100BCE137 /* reduced_citylist.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = reduced_citylist.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +47,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61A6E00A2CD11AAF00BCE137 /* SnapKit in Frameworks */,
+				61A6E00D2CD11ACD00BCE137 /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,9 +83,9 @@
 		61A6E0032CD1094200BCE137 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				61A6E0072CD11A6600BCE137 /* View */,
 				61A6DFEF2CD1082F00BCE137 /* AppDelegate.swift */,
 				61A6DFF12CD1082F00BCE137 /* SceneDelegate.swift */,
-				61A6DFF32CD1082F00BCE137 /* ViewController.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -73,11 +93,43 @@
 		61A6E0042CD1094A00BCE137 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				61A6E0202CD13BFF00BCE137 /* JSON */,
+				61A6E0132CD13AB500BCE137 /* Font */,
 				61A6DFF82CD1083000BCE137 /* Assets.xcassets */,
 				61A6DFFD2CD1083000BCE137 /* Info.plist */,
 				61A6DFFA2CD1083000BCE137 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		61A6E0072CD11A6600BCE137 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				61A6E0052CD11A6100BCE137 /* SplashViewController.swift */,
+				61A6E0112CD124FD00BCE137 /* MainViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		61A6E0132CD13AB500BCE137 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				61A6E0172CD13B3600BCE137 /* Pretendard-Bold.otf */,
+				61A6E0142CD13B3600BCE137 /* Pretendard-ExtraBold.otf */,
+				61A6E0162CD13B3600BCE137 /* Pretendard-Light.otf */,
+				61A6E0182CD13B3600BCE137 /* Pretendard-Medium.otf */,
+				61A6E0152CD13B3600BCE137 /* Pretendard-Regular.otf */,
+				61A6E0192CD13B3600BCE137 /* Pretendard-SemiBold.otf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		61A6E0202CD13BFF00BCE137 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				61A6E0212CD13C5100BCE137 /* reduced_citylist.json */,
+			);
+			path = JSON;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +148,10 @@
 			dependencies = (
 			);
 			name = Weather;
+			packageProductDependencies = (
+				61A6E0092CD11AAF00BCE137 /* SnapKit */,
+				61A6E00C2CD11ACD00BCE137 /* Then */,
+			);
 			productName = Weather;
 			productReference = 61A6DFEC2CD1082F00BCE137 /* Weather.app */;
 			productType = "com.apple.product-type.application";
@@ -124,6 +180,10 @@
 				Base,
 			);
 			mainGroup = 61A6DFE32CD1082F00BCE137;
+			packageReferences = (
+				61A6E0082CD11AAF00BCE137 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				61A6E00B2CD11ACD00BCE137 /* XCRemoteSwiftPackageReference "Then" */,
+			);
 			productRefGroup = 61A6DFED2CD1082F00BCE137 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,8 +198,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61A6E01E2CD13B3600BCE137 /* Pretendard-Medium.otf in Resources */,
 				61A6DFF92CD1083000BCE137 /* Assets.xcassets in Resources */,
+				61A6E01D2CD13B3600BCE137 /* Pretendard-Bold.otf in Resources */,
+				61A6E01F2CD13B3600BCE137 /* Pretendard-SemiBold.otf in Resources */,
+				61A6E01B2CD13B3600BCE137 /* Pretendard-Regular.otf in Resources */,
 				61A6DFFC2CD1083000BCE137 /* Base in Resources */,
+				61A6E0222CD13C5100BCE137 /* reduced_citylist.json in Resources */,
+				61A6E01C2CD13B3600BCE137 /* Pretendard-Light.otf in Resources */,
+				61A6E01A2CD13B3600BCE137 /* Pretendard-ExtraBold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,9 +217,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				61A6DFF42CD1082F00BCE137 /* ViewController.swift in Sources */,
 				61A6DFF02CD1082F00BCE137 /* AppDelegate.swift in Sources */,
 				61A6DFF22CD1082F00BCE137 /* SceneDelegate.swift in Sources */,
+				61A6E0062CD11A6100BCE137 /* SplashViewController.swift in Sources */,
+				61A6E0122CD124FD00BCE137 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,6 +441,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		61A6E0082CD11AAF00BCE137 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+		61A6E00B2CD11ACD00BCE137 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		61A6E0092CD11AAF00BCE137 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 61A6E0082CD11AAF00BCE137 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		61A6E00C2CD11ACD00BCE137 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 61A6E00B2CD11ACD00BCE137 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 61A6DFE42CD1082F00BCE137 /* Project object */;
 }
