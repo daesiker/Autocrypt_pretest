@@ -1,18 +1,15 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  Weather
 //
 //  Created by Daesik Jun on 10/29/24.
 //
 
+import Foundation
 import UIKit
 
-class ViewController: UIViewController {
-
+final class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .blue
     }
-
 }
-
