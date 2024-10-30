@@ -26,7 +26,7 @@ final class SplashViewController: UIViewController {
     private func setUI() {
         self.view.backgroundColor = .white
         
-        view.addSubview(imageView)
+        safeArea.addSubview(imageView)
         
         imageView.snp.makeConstraints {
             $0.centerY.equalToSuperview()

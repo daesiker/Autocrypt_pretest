@@ -22,6 +22,18 @@
 		61A6E01E2CD13B3600BCE137 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 61A6E0182CD13B3600BCE137 /* Pretendard-Medium.otf */; };
 		61A6E01F2CD13B3600BCE137 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 61A6E0192CD13B3600BCE137 /* Pretendard-SemiBold.otf */; };
 		61A6E0222CD13C5100BCE137 /* reduced_citylist.json in Resources */ = {isa = PBXBuildFile; fileRef = 61A6E0212CD13C5100BCE137 /* reduced_citylist.json */; };
+		61B1A2382CD24CB90074ABCF /* UIKit+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B1A2372CD24CB90074ABCF /* UIKit+Extension.swift */; };
+		61B1A23B2CD24E300074ABCF /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 61B1A23A2CD24E300074ABCF /* Alamofire */; };
+		61B1A23E2CD24E810074ABCF /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 61B1A23D2CD24E810074ABCF /* RxCocoa */; };
+		61B1A2412CD24EBE0074ABCF /* WeatherAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B1A2402CD24EBE0074ABCF /* WeatherAPIManager.swift */; };
+		61B1A2442CD2530A0074ABCF /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B1A2432CD2530A0074ABCF /* Weather.swift */; };
+		61B1A2472CD25EC60074ABCF /* WeatherHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B1A2462CD25EC60074ABCF /* WeatherHeaderView.swift */; };
+		61B1A2492CD263C90074ABCF /* HourlyWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B1A2482CD263C90074ABCF /* HourlyWeatherView.swift */; };
+		61B1A24B2CD26CF90074ABCF /* DailyWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B1A24A2CD26CF90074ABCF /* DailyWeatherView.swift */; };
+		61B1A24D2CD278790074ABCF /* MapWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B1A24C2CD278790074ABCF /* MapWeatherView.swift */; };
+		61B1A24F2CD27AF90074ABCF /* WeatherInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B1A24E2CD27AF90074ABCF /* WeatherInfoView.swift */; };
+		61B1A2522CD281BC0074ABCF /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B1A2512CD281BC0074ABCF /* MainViewModel.swift */; };
+		61B1A2542CD2973E0074ABCF /* Foundation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B1A2532CD2973E0074ABCF /* Foundation+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +52,16 @@
 		61A6E0182CD13B3600BCE137 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		61A6E0192CD13B3600BCE137 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		61A6E0212CD13C5100BCE137 /* reduced_citylist.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = reduced_citylist.json; sourceTree = "<group>"; };
+		61B1A2372CD24CB90074ABCF /* UIKit+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit+Extension.swift"; sourceTree = "<group>"; };
+		61B1A2402CD24EBE0074ABCF /* WeatherAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPIManager.swift; sourceTree = "<group>"; };
+		61B1A2432CD2530A0074ABCF /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		61B1A2462CD25EC60074ABCF /* WeatherHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherHeaderView.swift; sourceTree = "<group>"; };
+		61B1A2482CD263C90074ABCF /* HourlyWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherView.swift; sourceTree = "<group>"; };
+		61B1A24A2CD26CF90074ABCF /* DailyWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherView.swift; sourceTree = "<group>"; };
+		61B1A24C2CD278790074ABCF /* MapWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapWeatherView.swift; sourceTree = "<group>"; };
+		61B1A24E2CD27AF90074ABCF /* WeatherInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInfoView.swift; sourceTree = "<group>"; };
+		61B1A2512CD281BC0074ABCF /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		61B1A2532CD2973E0074ABCF /* Foundation+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Foundation+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,7 +69,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61B1A23B2CD24E300074ABCF /* Alamofire in Frameworks */,
 				61A6E00A2CD11AAF00BCE137 /* SnapKit in Frameworks */,
+				61B1A23E2CD24E810074ABCF /* RxCocoa in Frameworks */,
 				61A6E00D2CD11ACD00BCE137 /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -83,6 +107,11 @@
 		61A6E0032CD1094200BCE137 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				61B1A2502CD2817A0074ABCF /* ViewModel */,
+				61B1A2452CD25EA50074ABCF /* Components */,
+				61B1A2422CD250FC0074ABCF /* Model */,
+				61B1A23F2CD24EAE0074ABCF /* API */,
+				61B1A2362CD24CAC0074ABCF /* Extension */,
 				61A6E0072CD11A6600BCE137 /* View */,
 				61A6DFEF2CD1082F00BCE137 /* AppDelegate.swift */,
 				61A6DFF12CD1082F00BCE137 /* SceneDelegate.swift */,
@@ -132,6 +161,51 @@
 			path = JSON;
 			sourceTree = "<group>";
 		};
+		61B1A2362CD24CAC0074ABCF /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				61B1A2372CD24CB90074ABCF /* UIKit+Extension.swift */,
+				61B1A2532CD2973E0074ABCF /* Foundation+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		61B1A23F2CD24EAE0074ABCF /* API */ = {
+			isa = PBXGroup;
+			children = (
+				61B1A2402CD24EBE0074ABCF /* WeatherAPIManager.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		61B1A2422CD250FC0074ABCF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				61B1A2432CD2530A0074ABCF /* Weather.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		61B1A2452CD25EA50074ABCF /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				61B1A2462CD25EC60074ABCF /* WeatherHeaderView.swift */,
+				61B1A2482CD263C90074ABCF /* HourlyWeatherView.swift */,
+				61B1A24A2CD26CF90074ABCF /* DailyWeatherView.swift */,
+				61B1A24C2CD278790074ABCF /* MapWeatherView.swift */,
+				61B1A24E2CD27AF90074ABCF /* WeatherInfoView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		61B1A2502CD2817A0074ABCF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				61B1A2512CD281BC0074ABCF /* MainViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -151,6 +225,8 @@
 			packageProductDependencies = (
 				61A6E0092CD11AAF00BCE137 /* SnapKit */,
 				61A6E00C2CD11ACD00BCE137 /* Then */,
+				61B1A23A2CD24E300074ABCF /* Alamofire */,
+				61B1A23D2CD24E810074ABCF /* RxCocoa */,
 			);
 			productName = Weather;
 			productReference = 61A6DFEC2CD1082F00BCE137 /* Weather.app */;
@@ -183,6 +259,8 @@
 			packageReferences = (
 				61A6E0082CD11AAF00BCE137 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				61A6E00B2CD11ACD00BCE137 /* XCRemoteSwiftPackageReference "Then" */,
+				61B1A2392CD24E300074ABCF /* XCRemoteSwiftPackageReference "Alamofire" */,
+				61B1A23C2CD24E810074ABCF /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = 61A6DFED2CD1082F00BCE137 /* Products */;
 			projectDirPath = "";
@@ -217,10 +295,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61B1A2542CD2973E0074ABCF /* Foundation+Extension.swift in Sources */,
 				61A6DFF02CD1082F00BCE137 /* AppDelegate.swift in Sources */,
 				61A6DFF22CD1082F00BCE137 /* SceneDelegate.swift in Sources */,
+				61B1A2492CD263C90074ABCF /* HourlyWeatherView.swift in Sources */,
 				61A6E0062CD11A6100BCE137 /* SplashViewController.swift in Sources */,
+				61B1A2412CD24EBE0074ABCF /* WeatherAPIManager.swift in Sources */,
+				61B1A2522CD281BC0074ABCF /* MainViewModel.swift in Sources */,
+				61B1A24B2CD26CF90074ABCF /* DailyWeatherView.swift in Sources */,
 				61A6E0122CD124FD00BCE137 /* MainViewController.swift in Sources */,
+				61B1A2382CD24CB90074ABCF /* UIKit+Extension.swift in Sources */,
+				61B1A24D2CD278790074ABCF /* MapWeatherView.swift in Sources */,
+				61B1A2472CD25EC60074ABCF /* WeatherHeaderView.swift in Sources */,
+				61B1A2442CD2530A0074ABCF /* Weather.swift in Sources */,
+				61B1A24F2CD27AF90074ABCF /* WeatherInfoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,7 +378,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -347,7 +435,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -459,6 +547,22 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		61B1A2392CD24E300074ABCF /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.1;
+			};
+		};
+		61B1A23C2CD24E810074ABCF /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.8.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -471,6 +575,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 61A6E00B2CD11ACD00BCE137 /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
+		};
+		61B1A23A2CD24E300074ABCF /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 61B1A2392CD24E300074ABCF /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		61B1A23D2CD24E810074ABCF /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 61B1A23C2CD24E810074ABCF /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
