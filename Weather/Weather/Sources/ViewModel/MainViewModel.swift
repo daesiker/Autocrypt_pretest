@@ -23,7 +23,7 @@ class MainViewModel {
     
     let mapCoordinate = BehaviorSubject<(Double, Double)?>(value: nil)
     
-    func fetchWeather(city: String) {
+    func fetchWeather(city: String = "Asan") {
         let url = "https://api.openweathermap.org/data/2.5/forecast"
         let parameters: [String: Any] = [
             "q": city,

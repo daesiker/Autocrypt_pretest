@@ -11,7 +11,7 @@ import RxCocoa
 
 final class MainViewController: UIViewController {
     
-    private let viewModel = MainViewModel()
+    var viewModel:MainViewModel!
     private let disposeBag = DisposeBag()
     
     private let scrollView = UIScrollView().then {
@@ -75,7 +75,7 @@ final class MainViewController: UIViewController {
         super.viewDidLoad()
         setUI()
         bindViewModel()
-        viewModel.fetchWeather(city: "Asan")
+        viewModel.fetchWeather()
     }
     
     private func setUI() {
@@ -136,7 +136,7 @@ final class MainViewController: UIViewController {
         }
         
         
-        searchButton.addTarget(self, action: #selector(searchButtonTapped), for: .touchUpInside)
+        searchButton.addTarget(self, action: #selector(openSearch), for: .touchUpInside)
         
     }
     
@@ -185,7 +185,7 @@ final class MainViewController: UIViewController {
                 self.hourlyWeatherComponent.configure(hourlyData: hourlyData)
             }
             .disposed(by: disposeBag)
-       
+        
         viewModel.dailyForecast
             .bind { [weak self] dailyData in
                 guard let self = self else { return }
@@ -195,9 +195,20 @@ final class MainViewController: UIViewController {
             .disposed(by: disposeBag)
     }
     
-    //TODO: 검색 버튼 구현
-    @objc private func searchButtonTapped() {
-        print("버튼 클릭")
+    @objc private func openSearch() {
+        let searchVC = SearchViewController()
+        searchVC.delegate = self
+        let navVC = UINavigationController(rootViewController: searchVC)
+        navVC.modalTransitionStyle = .crossDissolve
+        navVC.modalPresentationStyle = .fullScreen
+        navVC.isNavigationBarHidden = false
+        present(navVC, animated: true, completion: nil)
     }
     
+}
+
+extension MainViewController: SearchViewControllerDelegate {
+    func didSelectCity(city: String) {
+        viewModel.fetchWeather(city: city)
+    }
 }
