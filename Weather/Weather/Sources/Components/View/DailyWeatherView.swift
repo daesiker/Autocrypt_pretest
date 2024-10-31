@@ -124,7 +124,7 @@ final class DailyWeatherView: UIView {
     }
     
     private func setupUI() {
-       
+        
         addSubview(splitView)
         
         splitView.snp.makeConstraints {
@@ -144,8 +144,27 @@ final class DailyWeatherView: UIView {
         dayLabel.text = data.day
         let iconName = data.iconName.getWeatherIcon()
         iconImageView.image = UIImage(named: iconName)
-        //TODO: 폰트 수정
-        let attributedString = NSMutableAttributedString(string: "최소: \(Int(data.minTemperature))°, 최대 \(Int(data.minTemperature))°")
+        
+        let minTemperature = "최소: \(Int(data.minTemperature))° "
+        let maxTemperature = " 최대: \(Int(data.maxTemperature))°"
+        let attributedString = NSMutableAttributedString(string: minTemperature + maxTemperature)
+        
+        // 최소 온도에 적용할 폰트와 색상
+        let minFont:UIFont = .pretendard(size: 12, weight: .medium)
+        let minColor:UIColor = UIColor(white: 1.0, alpha: 0.8)
+        
+        // 최대 온도에 적용할 폰트와 색상
+        let maxFont:UIFont = .pretendard(size: 14, weight: .bold)
+        let maxColor:UIColor = .white
+        
+        // 최소 온도 범위에 스타일 적용
+        attributedString.addAttribute(.font, value: minFont, range: NSRange(location: 0, length: minTemperature.count))
+        attributedString.addAttribute(.foregroundColor, value: minColor, range: NSRange(location: 0, length: minTemperature.count))
+        
+        // 최대 온도 범위에 스타일 적용
+        attributedString.addAttribute(.font, value: maxFont, range: NSRange(location: minTemperature.count, length: maxTemperature.count))
+        attributedString.addAttribute(.foregroundColor, value: maxColor, range: NSRange(location: minTemperature.count, length: maxTemperature.count))
+        
         
         tempLabel.attributedText = attributedString
         

@@ -16,24 +16,6 @@ struct WeatherResponse: Decodable {
     let city: City
 }
 
-// 도시 정보 모델
-struct City: Decodable {
-    let id: Int
-    let name: String
-    let coord: Coordinate
-    let country: String
-    let population: Int
-    let timezone: Int
-    let sunrise: Int
-    let sunset: Int
-}
-
-// 위도, 경도 정보 모델
-struct Coordinate: Decodable {
-    let lat: Double
-    let lon: Double
-}
-
 // 시간별 날씨 데이터 모델
 struct WeatherData: Decodable {
     let dt: Int
