@@ -7,7 +7,7 @@
 
 import Foundation
 
-// 도시 정보 모델
+/// 도시 정보 모델
 struct City: Codable {
     static var cityList:[City] = []
     
@@ -21,7 +21,7 @@ struct City: Codable {
     let sunset: Int?
 }
 
-// 위도, 경도 정보 모델
+/// 위도, 경도 정보 모델
 struct Coordinate: Codable {
     let lat: Double
     let lon: Double

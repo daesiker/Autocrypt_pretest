@@ -13,16 +13,31 @@ class MainViewModel {
     
     private let disposeBag = DisposeBag()
     
+    //WeatherHeaderView Data
     let headerData = BehaviorSubject<WeatherHeaderData?>(value: nil)
+    
+    //HourlyWeatherView Data
     let hourlyForecast = BehaviorSubject<[HourlyWeatherData]>(value: [])
+    
+    //DailyWeatherView Data
     let dailyForecast = BehaviorSubject<[DailyWeatherData]>(value: [])
     
+    //MapWeatherView Data
+    let mapCoordinate = BehaviorSubject<(Double, Double)?>(value: nil)
+    
+    //WeatherInfoView Data
     let humidity = BehaviorSubject<Int?>(value: nil)
     let cloudiness = BehaviorSubject<Int?>(value: nil)
     let windSpeed = BehaviorSubject<Double?>(value: nil)
     
-    let mapCoordinate = BehaviorSubject<(Double, Double)?>(value: nil)
+    // Error Message
+    let errorMessage = PublishSubject<String>()
     
+    /**
+     OpenWeather API를 통해 해당 도시 날씨 데이터를 가져오는 함수
+     - Parameters:
+        - city: 도시이름
+     */
     func fetchWeather(city: String = "Asan") {
         let url = "https://api.openweathermap.org/data/2.5/forecast"
         let parameters: [String: Any] = [
@@ -44,6 +59,7 @@ class MainViewModel {
                 self.mapCoordinate.onNext((weatherData.city.coord.lat, weatherData.city.coord.lon))
                 
                 //HourlyWeatherView
+                //2일 간의 데이터만 가져옴
                 let hourlyData = weatherData.list.prefix(16).map { data in
                     
                     HourlyWeatherData(time: data.dtTxt.toAmPmTime() ?? "", temperature: data.main.temp, iconName: data.weather.first?.main ?? "")
@@ -78,7 +94,8 @@ class MainViewModel {
                 self.humidity.onNext(averageHumidity)
                 
             case .failure(let error):
-                print("Error fetching weather: \(error)")
+                let message = "Error fetching weather: \(error.localizedDescription)"
+                self.errorMessage.onNext(message)
             }
         }
     }

@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Then
 
-// 시간별 날씨 데이터 모델
+/// 시간별 날씨 데이터 모델
 struct HourlyWeatherData {
     let time: String
     let temperature: Double
@@ -18,7 +18,6 @@ struct HourlyWeatherData {
 
 final class HourlyWeatherComponent: UIView {
     
-    // 기온 정보 라벨
     private let titleLabel = UILabel().then {
         $0.font = .pretendard(size: 14, weight: .medium)
         $0.textColor = .white
@@ -30,7 +29,7 @@ final class HourlyWeatherComponent: UIView {
         $0.backgroundColor = .white
     }
     
-    // 수평 스크롤 뷰
+    
     private let scrollView = UIScrollView().then {
         $0.showsHorizontalScrollIndicator = false
         $0.alwaysBounceHorizontal = true
@@ -54,17 +53,14 @@ final class HourlyWeatherComponent: UIView {
     }
     
     private func setupUI() {
-        // 컴포넌트 배경 설정
         self.backgroundColor = UIColor(white: 1.0, alpha: 0.2)
         self.layer.cornerRadius = 10
         
-        // 뷰에 요소 추가
         addSubview(titleLabel)
         addSubview(splitView)
         addSubview(scrollView)
         scrollView.addSubview(stackView)
         
-        // 레이아웃 설정
         titleLabel.snp.makeConstraints {
             $0.top.leading.equalToSuperview().inset(16)
             $0.trailing.equalToSuperview().inset(16)
@@ -91,7 +87,6 @@ final class HourlyWeatherComponent: UIView {
     // 시간별 날씨 데이터를 추가하는 메서드
     func configure(hourlyData: [HourlyWeatherData]) {
         stackView.arrangedSubviews.forEach { $0.removeFromSuperview() }  // 기존 뷰 삭제
-        
         for data in hourlyData {
             let hourView = HourlyWeatherView()
             hourView.configure(data: data)

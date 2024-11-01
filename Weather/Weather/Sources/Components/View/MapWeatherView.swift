@@ -13,14 +13,12 @@ import Then
 
 final class MapWeatherView: UIView {
     
-    // 제목 라벨
     private let titleLabel = UILabel().then {
         $0.text = "지도"
         $0.font = .pretendard(size: 14, weight: .medium)
         $0.textColor = .white
     }
     
-    // MKMapView 설정
     private let mapView = MKMapView().then {
         $0.layer.cornerRadius = 10
         $0.isZoomEnabled = true
@@ -42,11 +40,9 @@ final class MapWeatherView: UIView {
         self.backgroundColor = UIColor(white: 1.0, alpha: 0.2)
         self.layer.cornerRadius = 10
         
-        // 뷰에 제목 라벨과 지도 추가
         addSubview(titleLabel)
         addSubview(mapView)
         
-        // 레이아웃 설정
         titleLabel.snp.makeConstraints {
             $0.top.leading.equalToSuperview().inset(16)
             $0.trailing.equalToSuperview().inset(16)

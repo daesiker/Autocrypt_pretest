@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 import Then
 
+///WeatherHeaderView의 맞춤형 데이터
 struct WeatherHeaderData {
     let city:String
     let temperature:Double
@@ -17,7 +18,6 @@ struct WeatherHeaderData {
     
     init?(response: WeatherResponse) {
         self.city = response.city.name
-        
         if let currentWeather = response.list.first,
            let description = currentWeather.weather.first?.description{
             self.temperature = currentWeather.main.temp
@@ -27,7 +27,6 @@ struct WeatherHeaderData {
             return nil
         }
     }
-    
 }
 
 final class WeatherHeaderView: UIView {
@@ -56,7 +55,6 @@ final class WeatherHeaderView: UIView {
         $0.textAlignment = .center
     }
     
-    // 초기화
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
@@ -68,16 +66,13 @@ final class WeatherHeaderView: UIView {
     }
     
     private func setupUI() {
-        // 배경 설정
         self.backgroundColor = UIColor.clear
         
-        // 뷰에 요소 추가
         self.addSubview(cityLabel)
         self.addSubview(temperatureLabel)
         self.addSubview(descriptionLabel)
         self.addSubview(highLowLabel)
         
-        // 레이아웃 설정
         cityLabel.snp.makeConstraints {
             $0.top.equalToSuperview()
             $0.centerX.equalToSuperview()
@@ -100,7 +95,7 @@ final class WeatherHeaderView: UIView {
         }
     }
     
-    // 데이터 설정 함수
+    ///WeatherHeaderData 데이터 설정 함수
     func configure(data: WeatherHeaderData) {
         cityLabel.text = data.city
         temperatureLabel.text = "\(Int(data.temperature))°"

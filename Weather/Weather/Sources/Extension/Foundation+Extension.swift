@@ -8,7 +8,7 @@
 import Foundation
 
 extension String {
-    //시간 표시를 "오전/오후 h시"로 변경
+    ///시간 표시를 "오전/오후 h시"로 변경
     func toAmPmTime() -> String? {
         let inputFormatter = DateFormatter()
         inputFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
@@ -25,7 +25,7 @@ extension String {
         return outputFormatter.string(from: date)
     }
     
-    //시간 표시를 "요일"로 변경
+    ///시간 표시를 "요일"로 변경
     func toDayOfWeek() -> String? {
         let inputFormatter = DateFormatter()
         inputFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
@@ -42,7 +42,7 @@ extension String {
         return outputFormatter.string(from: date)
     }
     
-    //list.weather.main의 값을 아이콘으로 변경
+    ///Weather의 main을 아이콘으로 변경
     func getWeatherIcon() -> String {
         switch self {
         case "Clear" : return "01d"

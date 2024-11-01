@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import Then
 
-class CityTableViewCell: UITableViewCell {
+final class CityTableViewCell: UITableViewCell {
     
     private let nameLabel = UILabel().then {
         $0.font = .pretendard(size: 18, weight: .bold)
