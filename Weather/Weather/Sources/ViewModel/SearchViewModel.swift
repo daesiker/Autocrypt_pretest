@@ -11,20 +11,22 @@ import RxCocoa
 
 class SearchViewModel {
     
-    // Input
+    //검색어 input
     let searchText = BehaviorRelay<String>(value: "")
     
-    // Output
+    //도시목록 view에 output
     var filteredCityList: Observable<[City]> {
         return searchText
             .distinctUntilChanged()
             .flatMapLatest { [unowned self] query in
-                self.filterCities(with: query)
+                self.filterCities(query)
             }
     }
     
+    //최근 검색어
     var recentSearches: BehaviorRelay<[City]> = BehaviorRelay(value: [])
     
+    //JSON에 저장된 CityList
     private var cityList: [City] = City.cityList
     private let disposeBag = DisposeBag()
     
@@ -32,17 +34,24 @@ class SearchViewModel {
         loadRecentSearches()
     }
     
+    
+    ///최근 검색어가 있으면 데이터 로드
     private func loadRecentSearches() {
         guard let data = UserDefaults.standard.data(forKey: "recentSearches") else { return }
         do {
             let recentCities = try JSONDecoder().decode([City].self, from: data)
             recentSearches.accept(recentCities)
         } catch {
-            print("Error decoding recent searches: \(error)")
+            recentSearches.accept([])
         }
     }
     
-    private func saveRecentSearch(city: City) {
+    /**
+     Cell을 클릭했을 때 최근 검색어로 저장
+     - Parameters:
+        - city: 도시이름
+     */
+    func saveRecentSearch(city: City) {
         var currentSearches = recentSearches.value
         if let index = currentSearches.firstIndex(where: { $0.id == city.id }) {
             // 기존에 검색된 도시가 있다면 배열에서 제거하여 중복을 방지
@@ -63,7 +72,12 @@ class SearchViewModel {
         }
     }
     
-    private func filterCities(with query: String) -> Observable<[City]> {
+    /**
+     검색어에 따라 CityList 필터링
+     - Parameters:
+        - query: 검색어
+     */
+    private func filterCities(_ query: String) -> Observable<[City]> {
         if query.isEmpty {
             return .just(cityList)
         }
@@ -71,7 +85,5 @@ class SearchViewModel {
         return .just(filtered)
     }
     
-    func selectCity(city: City) {
-        saveRecentSearch(city: city)
-    }
+    
 }

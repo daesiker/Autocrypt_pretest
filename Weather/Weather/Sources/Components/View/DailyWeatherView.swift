@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-// 일별 날씨 데이터 모델
+/// 일별 날씨 데이터 모델
 struct DailyWeatherData {
     let day: String
     let iconName: String
@@ -19,15 +19,11 @@ struct DailyWeatherData {
 }
 
 final class DailyWeatherComponent: UIView {
-    
-    // "5일간의 일기예보" 제목 라벨
     private let titleLabel = UILabel().then {
         $0.text = "5일간의 일기예보"
         $0.font = .pretendard(size: 14, weight: .medium)
         $0.textColor = .white
     }
-    
-    
     
     // 데이터 표시를 위한 스택 뷰
     private let stackView = UIStackView().then {
@@ -48,15 +44,12 @@ final class DailyWeatherComponent: UIView {
     }
     
     private func setupUI() {
-        // 컴포넌트 배경 설정
         self.backgroundColor = UIColor(white: 1.0, alpha: 0.2)
         self.layer.cornerRadius = 10
         
-        // 뷰에 요소 추가
         addSubview(titleLabel)
         addSubview(stackView)
         
-        // 레이아웃 설정
         titleLabel.snp.makeConstraints { make in
             make.top.leading.equalToSuperview().inset(16)
         }

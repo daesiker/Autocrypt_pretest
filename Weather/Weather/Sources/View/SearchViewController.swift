@@ -11,20 +11,21 @@ import RxSwift
 import RxCocoa
 import Then
 
+
 protocol SearchViewControllerDelegate: AnyObject {
     func didSelectCity(city: String)
 }
 
-class SearchViewController: UIViewController {
+final class SearchViewController: UIViewController {
     weak var delegate: SearchViewControllerDelegate?
     
     private let viewModel = SearchViewModel()
     private let disposeBag = DisposeBag()
     
-    private lazy var tableView = UITableView().then {
+    private lazy var cityListTableView = UITableView().then {
         $0.backgroundColor = UIColor(red: 114/255, green: 145/255, blue: 192/255, alpha: 1.0)
         $0.delegate = self
-        $0.register(CityTableViewCell.self, forCellReuseIdentifier: "DefaultCell")
+        $0.register(CityTableViewCell.self, forCellReuseIdentifier: "CityCell")
         $0.isHidden = true
     }
     private lazy var recentTableView = UITableView().then {
@@ -76,8 +77,7 @@ class SearchViewController: UIViewController {
                 guard let self = self else { return }
                 
                 if searchText.isEmpty {
-                    // 검색어가 없고, recentTableView가 없으면 추가
-                    
+                    // 검색어가 없고, recentSearches가 없으면 추가
                     if self.viewModel.recentSearches.value.isEmpty {
                         self.showTableView()
                     } else {
@@ -92,7 +92,7 @@ class SearchViewController: UIViewController {
         
         // 필터링된 도시 목록과 tableView 바인딩
         viewModel.filteredCityList
-            .bind(to: tableView.rx.items(cellIdentifier: "DefaultCell", cellType: CityTableViewCell.self)) { row, city, cell in
+            .bind(to: cityListTableView.rx.items(cellIdentifier: "CityCell", cellType: CityTableViewCell.self)) { row, city, cell in
                 cell.configure(city: city)
             }
             .disposed(by: disposeBag)
@@ -107,33 +107,37 @@ class SearchViewController: UIViewController {
         // recentTableView의 셀 선택 시 이벤트 처리
         recentTableView.rx.modelSelected(City.self)
             .subscribe(onNext: { [weak self] city in
-                self?.viewModel.selectCity(city: city)
-                self?.delegate?.didSelectCity(city: city.name)
-                self?.dismiss(animated: true, completion: nil)
+                guard let self = self else { return }
+                self.viewModel.saveRecentSearch(city: city)
+                self.delegate?.didSelectCity(city: city.name)
+                self.dismiss(animated: true, completion: nil)
             })
             .disposed(by: disposeBag)
         
         // tableView의 셀 선택 시 이벤트 처리
-        tableView.rx.modelSelected(City.self)
+        cityListTableView.rx.modelSelected(City.self)
             .subscribe(onNext: { [weak self] city in
-                self?.viewModel.selectCity(city: city)
-                self?.delegate?.didSelectCity(city: city.name)
-                self?.dismiss(animated: true, completion: nil)
+                guard let self = self else { return }
+                self.viewModel.saveRecentSearch(city: city)
+                self.delegate?.didSelectCity(city: city.name)
+                self.dismiss(animated: true, completion: nil)
             })
             .disposed(by: disposeBag)
     }
     
+    ///cityTableView 노출
     private func showTableView() {
         recentTableView.removeFromSuperview()
-        view.addSubview(tableView)
-        tableView.isHidden = false
-        tableView.snp.makeConstraints {
+        view.addSubview(cityListTableView)
+        cityListTableView.isHidden = false
+        cityListTableView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
     }
     
+    ///recentTableView 노출
     private func showRecentTableView() {
-        tableView.removeFromSuperview()
+        cityListTableView.removeFromSuperview()
         view.addSubview(recentTableView)
         recentTableView.isHidden = false
         recentTableView.snp.makeConstraints {
@@ -151,6 +155,7 @@ class SearchViewController: UIViewController {
 extension SearchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
+        //headerView 추가
         let headerView = UIView()
         headerView.backgroundColor = UIColor(red: 114/255, green: 145/255, blue: 192/255, alpha: 1.0)
         
@@ -167,6 +172,7 @@ extension SearchViewController: UITableViewDelegate {
             $0.centerY.equalToSuperview()
         }
         
+        //recentTableView에는 헤더에 전체삭제 버튼 추가
         if tableView == recentTableView {
             let clearButton = UIButton(type: .system)
             clearButton.setTitle("Clear", for: .normal)
@@ -210,6 +216,7 @@ extension SearchViewController: UITableViewDelegate {
                 UserDefaults.standard.set(encodedData, forKey: "recentSearches")
             }
             
+            //최근 검색어가 비어있으면 cityTableView 노출
             if recentSearches.isEmpty {
                 self.showTableView()
             }

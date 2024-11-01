@@ -140,6 +140,7 @@ final class MainViewController: UIViewController {
         
     }
     
+    ///각 컴포넌트로 데이터 이동
     private func bindViewModel() {
         
         viewModel.headerData
@@ -193,8 +194,24 @@ final class MainViewController: UIViewController {
                 dailyWeatherComponent.configure(dailyData: dailyData)
             }
             .disposed(by: disposeBag)
+        
+        viewModel.errorMessage
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: { [weak self] message in
+                guard let self = self else { return }
+                self.showErrorAlert(message: message)
+            })
+            .disposed(by: disposeBag)
     }
     
+    
+    private func showErrorAlert(message: String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
+    }
+    
+    ///SearchViewController로 이동
     @objc private func openSearch() {
         let searchVC = SearchViewController()
         searchVC.delegate = self
@@ -206,6 +223,7 @@ final class MainViewController: UIViewController {
     }
     
 }
+
 
 extension MainViewController: SearchViewControllerDelegate {
     func didSelectCity(city: String) {

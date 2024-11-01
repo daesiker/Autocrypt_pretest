@@ -7,7 +7,7 @@
 
 import Foundation
 
-//  응답 모델
+///  응답 모델
 struct WeatherResponse: Decodable {
     let cod: String
     let message: Int
@@ -16,7 +16,7 @@ struct WeatherResponse: Decodable {
     let city: City
 }
 
-// 시간별 날씨 데이터 모델
+/// 시간별 날씨 데이터 모델
 struct WeatherData: Decodable {
     let dt: Int
     let main: MainWeather
@@ -28,14 +28,13 @@ struct WeatherData: Decodable {
     let sys: Sys
     let dtTxt: String
 
-    // JSON 키와 Swift 변수 이름이 다를 경우 CodingKeys 사용
     private enum CodingKeys: String, CodingKey {
         case dt, main, weather, clouds, wind, visibility, pop, sys
         case dtTxt = "dt_txt"
     }
 }
 
-// 주요 날씨 정보 모델
+/// 주요 날씨 정보 모델
 struct MainWeather: Decodable {
     let temp: Double
     let feelsLike: Double
@@ -60,7 +59,7 @@ struct MainWeather: Decodable {
     }
 }
 
-// 날씨 설명 정보 모델
+/// 날씨 설명 정보 모델
 struct Weather: Decodable {
     let id: Int
     let main: String
@@ -68,19 +67,19 @@ struct Weather: Decodable {
     let icon: String
 }
 
-// 구름량 정보 모델
+/// 구름량 정보 모델
 struct Clouds: Decodable {
     let all: Int
 }
 
-// 바람 속도 정보 모델
+/// 바람 속도 정보 모델
 struct Wind: Decodable {
     let speed: Double
     let deg: Int
     let gust: Double
 }
 
-// 기타 시스템 정보 모델
+/// 기타 시스템 정보 모델
 struct Sys: Decodable {
     let pod: String
 }
